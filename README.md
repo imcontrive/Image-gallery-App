@@ -2,6 +2,9 @@ Image Gallery App Using React.
 ----
 Task 1: REST API Integration
 ----
+Create a gallery using react with REDUX showing RANDOM 10 photos from following rest
+service.
+URL:`https://jsonplaceholder.typicode.com/photos`
 
 ## Available Scripts
 
