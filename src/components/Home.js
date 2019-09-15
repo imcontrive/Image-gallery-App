@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Loading from "./Loading";
 import Gallery from "./Gallery";
+import { fetchData } from "../action";
 
 class Home extends Component {
   state = {
@@ -10,13 +11,9 @@ class Home extends Component {
   componentDidMount() {
     var getDataFromLocalStorage = JSON.parse(localStorage.getItem("dataInfo"));
     if (!getDataFromLocalStorage) {
-      fetch(`https://jsonplaceholder.typicode.com/photos`)
-        .then(res => res.json())
-        .then(data => {
-          localStorage.setItem("dataInfo", JSON.stringify(data));
-          this.props.dispatch({ type: "GET_DATA", payload: data });
-          this.setState({ isLoading: false });
-        });
+      this.props
+        .dispatch(fetchData())
+        .then(res => this.setState({ isLoading: false }));
     } else {
       this.props.dispatch({
         type: "GET_DATA",
