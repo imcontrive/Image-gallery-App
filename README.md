@@ -1,5 +1,4 @@
-Image Gallery App Using React-redux. 
-Click here for [DeMo](https://image-gallery.netlify.com/)
+Image Gallery App Using React-redux.[DEMO](https://image-gallery.netlify.com/)
 ----
 Task 1: REST API Integration
 ----
