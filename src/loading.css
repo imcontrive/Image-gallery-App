@@ -1,6 +1,7 @@
 .isLoading {
   width: 100px;
   margin: 0 auto;
+  padding-top: 250px;
 }
 .lds-facebook {
   display: inline-block;
@@ -30,12 +31,12 @@
 }
 @keyframes lds-facebook {
   0% {
-    top: 6px;
+    top: 50px;
     height: 51px;
   }
   50%,
   100% {
-    top: 19px;
+    top: 59px;
     height: 26px;
   }
 }

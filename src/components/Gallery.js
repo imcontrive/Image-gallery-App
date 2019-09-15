@@ -1,15 +1,24 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+function generateRandomNum(num) {
+  let randomNum = 0;
+  randomNum = Math.floor(Math.random() * num);
+  return randomNum;
+}
+
 class Gallery extends Component {
   render() {
-    const { dataInfo } = this.props;
+    let { dataInfo } = this.props;
+    var random = generateRandomNum(dataInfo.length);
+    const randomData = dataInfo.slice(random, random + 10);
+
     return (
       <div className="container">
         <h1 className="heading">Image Gallery App</h1>
         <div className="gallery">
-          {dataInfo
-            ? dataInfo.map(imageInfo => (
+          {randomData
+            ? randomData.map(imageInfo => (
                 <div className="gallery-item" key={imageInfo.id}>
                   <img
                     className="gallery-image"
@@ -18,7 +27,7 @@ class Gallery extends Component {
                   />
                 </div>
               ))
-            : "not found"}
+            : "data not found"}
         </div>
       </div>
     );

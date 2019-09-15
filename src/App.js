@@ -1,13 +1,10 @@
-import React, { Component } from 'react'; 
-import {connect} from 'react-redux';
-import Home from './components/Home';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import Home from "./components/Home";
 
 class App extends Component {
- 
   render() {
-    return (
-      <Home/>
-    )
+    return <Home />;
   }
 }
 

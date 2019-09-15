@@ -13,9 +13,8 @@ class Home extends Component {
       fetch(`https://jsonplaceholder.typicode.com/photos`)
         .then(res => res.json())
         .then(data => {
-          const ModifiedData = data.slice(0, 10);
-          localStorage.setItem("dataInfo", JSON.stringify(ModifiedData));
-          this.props.dispatch({ type: "GET_DATA", payload: ModifiedData });
+          localStorage.setItem("dataInfo", JSON.stringify(data));
+          this.props.dispatch({ type: "GET_DATA", payload: data });
           this.setState({ isLoading: false });
         });
     } else {
